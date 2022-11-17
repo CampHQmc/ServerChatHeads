@@ -1,38 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "chatheads",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Chatheads",
+  "description": "Use player heads in chat via placeholers, completely serverside!",
   "authors": [
-    "Me!"
+    "Camper_Samu",
+    "Cody (Original Minestom Extension)"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
-  "environment": "*",
+  "contact": {},
+  "license": "GPL-3.0",
+  "environment": "server",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
+    "server": [
+      "com.campersamu.chatheads.ChatHeadsInit"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "chatheads.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.14.9",
-    "fabric-api": "*",
-    "minecraft": "~1.19",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
+    "fabricloader": ">=0.14.10",
+    "fabric": "*",
+    "minecraft": "1.19.2"
   }
 }
