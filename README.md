@@ -24,7 +24,7 @@ ___
 - **[CatDevz](https://github.com/CatDevz)** for making the [original Minestom code](https://canary.discord.com/channels/706185253441634317/1042351571930984448/1042352421176885318)
 - **[Camper_Samu (me)](https://github.com/CamperSamu)** for making the [Fabric](fabricmc.net) port
 - [**TheEpicBlock** for PolyMC](https://github.com/TheEpicBlock/PolyMc)
-- **[Patbox]**(https://github.com/Patbox) for [Polymer](https://github.com/Patbox/Polymer), a part of PolyMC and the core of many Serverside mods (like this one)
+- **[Patbox](https://github.com/Patbox)** for [Polymer](https://github.com/Patbox/Polymer), a part of PolyMC and the core of many Serverside mods (like this one)
 - [Fabric Server-Side Development Discord](https://discord.gg/spsDnxp) for helping me while making this mod and other mods (like [WAYF?](https://github.com/CamperSamu/WhereAreYouFrom) or [PolyForgery](https://github.com/CamperSamu/PolyForgery))
 
 ## Setup
