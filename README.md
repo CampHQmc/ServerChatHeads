@@ -1,6 +1,8 @@
 # Server Chat Heads
 Use player heads in chat and more via placeholders! Credits to [CatDevz](https://github.com/CatDevz) for making the [original Minestom code](https://canary.discord.com/channels/706185253441634317/1042351571930984448/1042352421176885318).
 
+![Showcase](https://user-images.githubusercontent.com/32773961/202585468-50f7663d-9df2-4ff1-b8ee-7beab1140783.png)
+
 ## How it works
 When a player joins its skin gets downloaded and the colors of the pixels of the face get extracted and put in a `User UUID, TextColor[][]` Map, when the placeholder gets invoked, it searches for the user in that map and tries to print the head in chat using negative spaces and a custom pixel font.
 
