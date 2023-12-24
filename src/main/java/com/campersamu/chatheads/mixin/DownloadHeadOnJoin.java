@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -40,14 +41,15 @@ public abstract class DownloadHeadOnJoin {
         //Use a new Thread since downloading a skin is slow and would slow down the player joining process
         new Thread(() -> {
             synchronized (HEAD_CACHE) {
-                final TextColor[][] head = HEAD_CACHE.computeIfAbsent(player.getUuid(), uuid -> getPlayerHead(profile, player));
+                final TextColor[][] head = HEAD_CACHE.computeIfAbsent(player.getUuid(), uuid -> chatheads$getPlayerHead(profile, player));
                 HEAD_CACHE.put(profile.getId(), head);
             }
         }).start();
     }
 
     //region Util
-    private TextColor[][] getPlayerHead(final GameProfile profile, final ServerPlayerEntity player){
+    @Unique
+    private TextColor[][] chatheads$getPlayerHead(final GameProfile profile, final ServerPlayerEntity player){
         //get skin url
         final String playerSkinUrl = server.getSessionService().getTextures(profile, false).get(MinecraftProfileTexture.Type.SKIN).getUrl();
 
