@@ -62,7 +62,7 @@ public class ChatHeadsInit implements DedicatedServerModInitializer {
             text = text.append(literal("\uE008").fillStyle(Style.EMPTY.withFont(Identifier.of(MODID, "pixel"))));
         }
 
-        text.append(literal(" "));
+        text.append(literal("  "));
 
         return text;
     }
