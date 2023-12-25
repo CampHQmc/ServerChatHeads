@@ -9,6 +9,7 @@
     "Cody (Original Minestom Extension)"
   ],
   "contact": {},
+  "icon": "assets/chatheads/icon.png",
   "license": "GPL-3.0",
   "environment": "server",
   "entrypoints": {
