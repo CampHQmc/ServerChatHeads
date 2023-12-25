@@ -5,6 +5,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.PlayerManager;
+import net.minecraft.server.network.ConnectedClientData;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.TextColor;
 import org.slf4j.Logger;
@@ -36,7 +37,7 @@ public abstract class DownloadHeadOnJoin {
 
     //Mixin into the player connect/join event and downlaod the skin for the player (needs a server restart to update)
     @Inject(method = "onPlayerConnect", at = @At("HEAD"))
-    private void chatheads$invokeDownloadOnJoin(ClientConnection connection, ServerPlayerEntity player, CallbackInfo ci) {
+    private void chatheads$invokeDownloadOnJoin(ClientConnection connection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo ci) {
         final var profile = player.getGameProfile();
         //Use a new Thread since downloading a skin is slow and would slow down the player joining process
         new Thread(() -> {
@@ -51,7 +52,7 @@ public abstract class DownloadHeadOnJoin {
     @Unique
     private TextColor[][] chatheads$getPlayerHead(final GameProfile profile, final ServerPlayerEntity player){
         //get skin url
-        final String playerSkinUrl = server.getSessionService().getTextures(profile, false).get(MinecraftProfileTexture.Type.SKIN).getUrl();
+        final String playerSkinUrl = server.getSessionService().getTextures(profile).skin().getUrl();
 
         //return default head if null
         if (playerSkinUrl == null) return DEFAULT_HEAD_TEXTURE;

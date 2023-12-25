@@ -2,7 +2,7 @@ package com.campersamu.chatheads;
 
 import eu.pb4.placeholders.api.PlaceholderResult;
 import eu.pb4.placeholders.api.Placeholders;
-import eu.pb4.polymer.api.resourcepack.PolymerRPUtils;
+import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import net.fabricmc.api.DedicatedServerModInitializer;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
@@ -38,7 +38,7 @@ public class ChatHeadsInit implements DedicatedServerModInitializer {
     @Override
     public void onInitializeServer() {
         //Add Mod Resources to Polymer Resource Pack
-        PolymerRPUtils.addAssetSource(MODID);
+        PolymerResourcePackUtils.addModAssets(MODID);
 
         //Register Placeholder
         Placeholders.register(new Identifier(MODID, "player"), (ctx, arg) -> {
