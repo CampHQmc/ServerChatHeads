@@ -2,26 +2,32 @@
   "schemaVersion": 1,
   "id": "chatheads",
   "version": "${version}",
-  "name": "Chatheads",
+  "name": "Server Chat Heads",
   "description": "Use player heads in chat via placeholers, completely serverside!",
   "authors": [
     "Camper_Samu",
     "Cody (Original Minestom Extension)"
   ],
-  "contact": {},
+  "contibutors": [
+    "unilock"
+  ],
+  "contact": {
+    "sources": "https://github.com/CampHQmc/ServerChatHeads",
+    "issues": "https://github.com/CampHQmc/ServerChatHeads/issues"
+  },
   "icon": "assets/chatheads/icon.png",
   "license": "GPL-3.0",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
-    "server": [
-      "com.campersamu.chatheads.ChatHeadsInit"
+    "main": [
+      "com.campersamu.chatheads.ChatHeads"
     ]
   },
   "mixins": [
     "chatheads.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.10",
-    "minecraft": "1.20.x"
+    "fabricloader": "*",
+    "minecraft": ">=1.20.3"
   }
 }
