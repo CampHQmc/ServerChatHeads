@@ -4,9 +4,12 @@
   "package": "com.campersamu.chatheads.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "DownloadHeadOnJoin"
+    "MixinEntity",
+    "MixinMinecraftServer",
+    "MixinPlayerManager"
   ],
   "client": [
+    "client.MixinChatHud"
   ],
   "injectors": {
     "defaultRequire": 1

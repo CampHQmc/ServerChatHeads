@@ -1,3 +1,7 @@
+_This is a fork of server chat heads that supports [Fabric Tailor](https://github.com/samolego/FabricTailor) and third-party skin renderers._
+
+_Original readme as follows:_
+
 # Server Chat Heads
 
 > *Plz Mojang optimize font rendering*
